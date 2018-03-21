@@ -1,6 +1,7 @@
 package ua;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -53,13 +54,17 @@ public class Homework4 extends DriverScript {
               Assert.assertEquals(driver.getTitle(),"товары • prestashop-automation", "Unexpected title");
 
         wait.until(ExpectedConditions.elementToBeClickable(newCategory));
+
         driver.findElement(newCategory).click();
         wait.until(ExpectedConditions.elementToBeClickable(nameCategory));
         driver.findElement(nameCategory).sendKeys(name);
         driver.findElement(countI).click();
+        driver.findElement(countIrandom).sendKeys(Keys.BACK_SPACE);
         driver.findElement(countIrandom).sendKeys(count+"");
-                driver.findElement(priceI).click();
-        driver.findElement(priceIrandom).sendKeys(price+"");
+        driver.findElement(priceI).click();
+        driver.findElement(priceIrandom).sendKeys(Keys.CONTROL,"a");
+        driver.findElement(priceIrandom).sendKeys(Keys.DELETE);
+                driver.findElement(priceIrandom).sendKeys(price+"");
         driver.findElement(switchInput).click();
         driver.findElement(submitProdact).click();
     }}
