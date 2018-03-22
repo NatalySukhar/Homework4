@@ -43,7 +43,7 @@ public class Homework4 extends DriverScript {
         WebElement element=driver.findElement(category);
         Actions actions=new Actions(driver);
         actions.moveToElement(element).build().perform();
-        wait.until(ExpectedConditions.elementToBeClickable( element.findElements(By.cssSelector("li")).get(0)));
+        //wait.until(ExpectedConditions.elementToBeClickable( element.findElements(By.cssSelector("li")).get(0)));
         element.findElements(By.cssSelector("li")).get(0).click();
         System.out.println("Page title is: " +driver.getTitle());
               Assert.assertEquals(driver.getTitle(),"товары • prestashop-automation", "Unexpected title");
@@ -62,4 +62,9 @@ public class Homework4 extends DriverScript {
                 driver.findElement(priceIrandom).sendKeys(price+"");
         driver.findElement(switchInput).click();
         driver.findElement(submitProdact).click();
+    }
+    @Test(dependsOnMethods = "open")
+    public void shop(String login,String password){
+        driver.navigate().to("http://prestashop-automation.qatestlab.com.ua/");
+
     }}

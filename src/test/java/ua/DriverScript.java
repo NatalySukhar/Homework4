@@ -57,12 +57,12 @@ public abstract class DriverScript {
             mobileOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
             return new ChromeDriver(mobileOptions);
 
-            default:System.setProperty("webdriver.chrome.driver", new File(DriverScript.class.getResource( "/chromedriver.exe").getFile()).getPath());
+            default:System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/drivers/chromedriver.exe");
                 return new ChromeDriver();
     }}
         @BeforeClass
         @Parameters("selenium.browser")
-    public void  getConfiguredDriver(@Optional("remoteChrome") String browser){
+    public void  getConfiguredDriver(@Optional("chrome") String browser){
         WebDriver driver1=getDriver(browser);
         driver1.manage().window().maximize();
 

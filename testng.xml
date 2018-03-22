@@ -6,30 +6,35 @@
     <parameter name="browser" value="firefox" />
     <classes>
         <class name="ua.Homework4" />
+        <class name="ua.Homework5"/>
     </classes>
 </test>
 <test name="ChromeTest">
     <parameter name="browser" value="chrome" />
     <classes>
         <class name="ua.Homework4" />
+        <class name="ua.Homework5"/>
     </classes>
 </test>
 <test name="IETest">
     <parameter name="browser" value="ie" />
     <classes>
         <class name="ua.Homework4" />
+        <class name="ua.Homework5"/>
     </classes>
 </test>
 <test name="MobileTest">
 <parameter name="browser" value="mobile" />
 <classes>
     <class name="ua.Homework4" />
+    <class name="ua.Homework5"/>
 </classes>
 </test>
     <test name="HeadlessChromeTest">
         <parameter name="browser" value="headless-chrome" />
         <classes>
             <class name="ua.Homework4" />
+            <class name="ua.Homework5"/>
         </classes>
     </test>
 </suite>
