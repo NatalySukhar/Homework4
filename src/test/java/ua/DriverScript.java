@@ -62,7 +62,7 @@ public abstract class DriverScript {
     }}
         @BeforeClass
         @Parameters("selenium.browser")
-    public void  getConfiguredDriver(@Optional("chrome") String browser){
+    public void  getConfiguredDriver(@Optional("remoteChrome") String browser){
         WebDriver driver1=getDriver(browser);
         driver1.manage().window().maximize();
 
